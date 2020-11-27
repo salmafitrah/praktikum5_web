@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <script >
+        function validasi(){
+            let nama = document.forms["form"]["nama"].value;
+            let email = document.forms["form"]["email"].value;
+            let time = document.forms["form"]["time"].value;
+            let destinasi = document.forms["form"]["destinasi"].value;
+            let ticket = document.forms["form"]["ticket"].value;
+            let hasil = document.getElementById("hasil");
+
+
+           if (nama == "" || email == "" || time == "" || destinasi == ""){
+                alert("data harus diisi!");
+                return false;
+            } else if (form.nama.value.length >= 30){
+                alert ('maksimal 30 karakter');
+                return false;
+            } else {
+                hasil.innerHTML = nama + email + time + destinasi + ticket ;
+            }
+        }
+    </script>
+    <style>
+        body{
+                background-image: url("img/bg.jpg");
+                background-size: cover;
+                justify-content: center;
+                align-items: center;
+                padding: 120px ;
+                height: 100vh;
+                color: #8F617E ;
+                margin: 0;
+            }
+            fieldset {
+                box-sizing: border-box;
+                border-radius: 4px;
+                overflow: hidden;
+                background: rgba(225, 225, 225, 0.7);
+                border: 0;
+                width: 120vh;
+                height: 60vh;
+            }
+    </style>
+</head>
+<body>
+    <center><fieldset>
+    <form name="form" onsubmit="validasi()">
+        <h1>Your Ticket.</h1>
+        Passenger Name <input type="text" id="nama" name="nama" maxlength="30"> <br><br>
+        Enter Your Email <input type="email" id="email" name="email"> <br><br>
+        Departure time <input type="time" id="time" name="time"><br><br>
+        Destination <input type="text" id="destinasi" name="destinasi"><br><br>
+        Ticket amount <input type="text" id="ticket" name="ticket"><br><br>
+        <input type="submit" value="kirim">
+    </form>
+</fieldset></center>
+<p > <h1>Your Ticket.</h1><span id="hasil"></span></p>
+</body>
+</html>

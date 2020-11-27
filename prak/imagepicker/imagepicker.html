@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+    <head>
+        <title>Pilih karakter </title>
+        <script>
+            function pilih(){
+                let list_karakter = document.getElementById("karakter");
+                let idx = list_karakter.selectedIndex;
+                let area_gambar = document.getElementById("gambar");
+                area_gambar.src="img/"+ list_karakter[idx].value + ".jpg";
+                alert ("karakter ini " + list_karakter[idx].value + ".jpg");
+            }
+        </script>
+        <style>
+            body{
+                background-image: url("img/bg.jpg");
+                background-size: cover;
+                justify-content: center;
+                align-items: center;
+                padding: 120px ;
+                height: 100vh;
+                color: #8F617E ;
+                margin: 0;
+            }
+            fieldset {
+                box-sizing: border-box;
+                border-radius: 4px;
+                overflow: hidden;
+                background: rgba(225, 225, 225, 0.7);
+                border: 0;
+                width: 120vh;
+                height: 60vh;
+            }
+        </style>
+    </head>
+    <body >
+        <center>
+            <fieldset>
+             <form id="frm1">
+            Pilih Karakter Film The Secret Life Of Pets: <select id="karakter" onchange="pilih()">
+                <option value="chloe">Chloe</option>
+                <option value="gidget">Gidget</option>
+                <option value="max">Max</option>
+                <option value="rooster">Rooster</option>
+                <option value="snowball">Snowball</option>
+                <option value="daisy">Daisy</option>
+            </select>
+        </form>
+
+        <br><br>
+        <img src="img/chloe.jpg" alt="gambar film" id="gambar" width="20%" border='1px'>
+   </fieldset>
+</center>
+    </body>
+</html>

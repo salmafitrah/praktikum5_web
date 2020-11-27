@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat message</title>
+    <style>
+        body{
+            background-image: url("img/bg.jpg");
+                background-size: cover;
+                justify-content: center;
+                align-items: center;
+                padding: 120px ;
+                height: 100vh;
+                color: #8F617E ;
+                margin: 0;
+        }
+        fieldset{
+            box-sizing: border-box;
+            border-radius: 4px;
+            overflow: hidden;
+            background: rgba(225, 225, 225, 0.7);
+            border: 0;
+            width: 100vh;
+            height: 60vh;
+        
+        }
+
+    </style>
+</head>
+<body >
+    <center>
+    <fieldset>
+    Chat dari salma 
+
+    <form method="REQUEST" onsubmit="return kirim();">
+        <input type="text" id="chat" >
+        <button type="submit" onclick="kirimpesan">kirim</button>
+
+    </form>
+    <p id="pesan"></p>
+    <script>
+        function kirimpesan(){
+            let input = document.getElementById("chat").value;
+            document.getElementById("chat").value = "";
+            return false;
+            
+
+        }
+    </script> </fieldset>
+    </center>
+</body>
